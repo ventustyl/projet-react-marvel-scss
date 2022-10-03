@@ -7,10 +7,13 @@ $bg-img: url("/img/avengers.png");
   box-sizing: border-box;
   margin: 0;
   font-family: "Inter", sans-serif;
+
 }
+
 .app {
   display: flex;
   justify-content: center;
+
   .container {
     width: 1680px;
   }
@@ -21,7 +24,7 @@ $bg-img: url("/img/avengers.png");
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100vh;
+    height: 70vh;
     background: $blackmarvel;
     align-items: center;
 
@@ -50,6 +53,7 @@ $bg-img: url("/img/avengers.png");
       border-bottom: 1px solid red;
       text-align: center;
       background: none;
+      color: black;
     }
 
     button {
@@ -58,22 +62,30 @@ $bg-img: url("/img/avengers.png");
       background-color: $blackmarvel;
       color: white;
     }
+
     p {
       font-size: 12px;
       color: red;
       text-align: center;
       background: white;
     }
+
     span {
       font-size: 12px;
       text-align: center;
       background: white;
+      color: black;
+      a{
+        color: black;
+      }
     }
+
     .enregistre {
       background: white;
     }
   }
 }
+
 //Style Navbar
 .navbar {
   .container {
@@ -81,11 +93,13 @@ $bg-img: url("/img/avengers.png");
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     .logo {
       img {
         width: 200px;
       }
     }
+
     .liens {
       display: block;
       display: flex;
@@ -102,11 +116,13 @@ $bg-img: url("/img/avengers.png");
         text-transform: uppercase;
         text-decoration: none;
         font-weight: 500;
+        cursor: pointer;
 
         &::first-letter {
           color: red;
         }
       }
+
       span {
         color: white;
         font-size: 20px;
@@ -115,6 +131,7 @@ $bg-img: url("/img/avengers.png");
         &::first-letter {
           color: red;
         }
+
         .ecrire {
           color: white;
           background: $blackmarvel;
@@ -136,6 +153,7 @@ $bg-img: url("/img/avengers.png");
     }
   }
 }
+
 //footer
 
 .container-footer {
@@ -148,9 +166,11 @@ $bg-img: url("/img/avengers.png");
   img {
     width: 200px;
   }
+
   a {
     text-decoration: none;
   }
+
   h6 {
     font-size: 16px;
   }
@@ -169,6 +189,7 @@ $bg-img: url("/img/avengers.png");
       align-items: center;
       gap: 10px;
       margin-bottom: 0;
+
       img {
         margin-top: 0;
         height: 50px;
@@ -182,6 +203,7 @@ $bg-img: url("/img/avengers.png");
   display: flex;
   flex-wrap: wrap;
 }
+
 .post {
   display: flex;
   flex-direction: column;
@@ -195,19 +217,24 @@ $bg-img: url("/img/avengers.png");
     img {
       max-width: 400px;
       max-height: 200px;
+      object-fit: cover;
     }
   }
+
   .content {
     width: 600px;
     display: block;
     text-align: center;
     margin: 20px auto;
+
     &::first-letter {
       color: red;
     }
+
     a {
       text-decoration: none;
     }
+
     button {
       margin: 20px auto;
       padding: 10px 30px;
@@ -215,6 +242,19 @@ $bg-img: url("/img/avengers.png");
       font-weight: bold;
       outline: 2px solid red;
       border-radius: 30px 0px 30px 0;
+      transition: .5s all;
+
+      &::first-letter {
+        color: red;
+      }
+
+      &:hover {
+        outline: 2px solid white;
+        transition: .5s all;
+        color: black;
+        background: white;
+      }
+
     }
   }
 }
@@ -224,12 +264,15 @@ $bg-img: url("/img/avengers.png");
 .fond-ecran {
   width: 100%;
 }
+
 h1 {
   text-align: center;
+
   &::first-letter {
     color: red;
   }
 }
+
 .ordre {
   display: flex;
   margin-top: 20px;
@@ -237,10 +280,12 @@ h1 {
   align-items: center;
   justify-content: space-around;
   text-align: center;
+
   h3 {
     color: white;
     font-size: 30px;
     text-align: center;
+
     &::first-letter {
       color: red;
     }
@@ -259,6 +304,7 @@ h1 {
   position: relative;
   border-radius: 100px;
   box-shadow: 2px 1px 5px 1px rgba(0, 0, 0, 0.541) inset;
+
   &::after {
     content: "";
     height: 15px;
@@ -273,7 +319,7 @@ h1 {
   }
 }
 
-.checkbox:checked + label::after {
+.checkbox:checked+label::after {
   transform: translateX(35px);
 }
 
@@ -286,13 +332,11 @@ h1 {
   white-space: pre-wrap;
   columns: 2;
   text-align: center;
-  background-image: linear-gradient(
-      90deg,
+  background-image: linear-gradient(90deg,
       rgba(0, 0, 0, 0.8) 0%,
       rgba(0, 0, 0, 0.7) 18%,
       rgba(0, 0, 0, 0.7) 82%,
-      rgba(0, 0, 0, 0.7959558823529411) 100%
-    ),
+      rgba(0, 0, 0, 0.7959558823529411) 100%),
     ($bg-img);
   background-position: center;
   background-size: contain;
@@ -307,4 +351,242 @@ h1 {
   text-align: left;
   width: 100%;
   white-space: pre-wrap;
+}
+
+//Page single
+
+
+.single {
+  display: flex;
+  gap: 50px;
+
+  .content {
+    flex: 5;
+
+    img {
+      width: 100%;
+      height: 300px;
+      object-fit: contain;
+
+    }
+
+    .user {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      .edit {
+        display: flex;
+        gap: 10px;
+
+        img {
+          width: 50px;
+          height: 50px;
+          object-fit: contain;
+        }
+      }
+
+
+      span {
+        font-size: 20px;
+        font-weight: bold;
+      }
+    }
+
+    h1 {
+      text-align: left;
+    }
+
+    p {
+      text-align: justify;
+      line-height: 30px;
+    }
+  }
+
+  .menu {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    h1 {
+      font-size: 20px;
+    }
+
+    .post {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+
+      img {
+        width: 100%;
+        height: 200px;
+        object-fit: scale-down;
+      }
+
+      h2 {
+        font-size: 20px;
+
+        &::first-letter {
+          color: red;
+        }
+      }
+
+      button {
+        margin: 5px auto;
+        padding: 5px 30px;
+        font-size: 16px;
+        font-weight: bold;
+        outline: 2px solid red;
+        border-radius: 30px 0px 30px 0;
+        transition: .5s all;
+
+        &::first-letter {
+          color: red;
+        }
+
+        &:hover {
+          outline: 2px solid white;
+          transition: .5s all;
+          color: black;
+          background: white;
+        }
+
+      }
+    }
+
+  }
+}
+
+//  Page ecrire article
+
+.ajouter {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+
+  .content {
+    flex: 5;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    input {
+      border: 1px white solid;
+      color: white;
+      padding: 10px;
+      outline: 2px solid red;
+
+    }
+
+    .quill {
+      outline: 2px solid red;
+      padding: 5px;
+
+
+      .ql-snow,
+      .ql-picker,
+      .ql-stroke,
+
+      .ql-active {
+        stroke: red !important;
+        color: white;
+
+        &:active {
+          stroke: red;
+          color: red;
+        }
+
+        .ql-picker-item {
+          color: white;
+        }
+      }
+
+      .ql-editor {
+        height: 400px;
+        text-align: left;
+
+        h1 {
+          text-align: left;
+
+          &::first-letter {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+.menu {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .item {
+    display: flex;
+    border: 1px solid white;
+    padding: 10px;
+    flex: 1;
+    flex-direction: column;
+justify-content: space-between;
+font-size: 12px;
+
+    .download {
+      display: none;
+    }
+    .telechargement {
+      color: red;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+    .bouton{  
+      display: flex;
+      justify-content: space-around;
+      
+      button {     
+      padding: 5px 30px;
+      font-size: 16px;
+      font-weight: bold;
+      outline: 2px solid red;
+      border-radius: 30px 0px 30px 0;
+      transition: .5s all;
+
+      &::first-letter {
+        color: red;
+      }
+
+      &:hover {
+        outline: 2px solid white;
+        transition: .5s all;
+        color: black;
+        background: white;
+      }
+  }}
+.cat{
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  input{
+  transform: scale(2);
+  }
+  label{
+    font-size: 18px;
+  }
+}
+
+}
 }

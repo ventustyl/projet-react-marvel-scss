@@ -13,8 +13,8 @@ const Footer = () => {
   return (
     <div className="container-footer">
       <img src={Logo} alt="Logo marvel studio" />
-      <Link className="lien" to={"./"}>
-        <h6>accueil</h6>
+      <Link className="lien" to={"../"}>
+        <h6>Accueil</h6>
       </Link>
       <Link className="lien" to={"./?cat=film"}>
         <h6>Films</h6>

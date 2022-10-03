@@ -12,7 +12,7 @@ const Home = () => {
       <div className="ordre">
         <h3>Date de sortie</h3>
         <input type="checkbox" id="toggle" className="checkbox" />
-        <label for="toggle" class="label"></label>
+        <label htmlFor="toggle" className="label"></label>
         <h3>Ordre histoire</h3>
       </div>
       <div className="liste"> 

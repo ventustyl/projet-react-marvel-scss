@@ -2,7 +2,6 @@
 import {
   createBrowserRouter,
   RouterProvider,
-  Route,
   Outlet,
 } from "react-router-dom";
 import Register from "./pages/Register";
@@ -42,7 +41,7 @@ const router = createBrowserRouter([
         element: <Film />,
       },
       {
-        path: "/post/:id",
+        path: "/film/:id",
         element: <Single />,
       },
       {
