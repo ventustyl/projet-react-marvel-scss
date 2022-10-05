@@ -28,7 +28,7 @@ const Navbar = () => {
           <Link className="lien" to={'../personnage/?cat=personnage'}>
           <h6>Personnages</h6>
           </Link>
-          <Link className="lien" to={'../?cat=blog'}>
+          <Link className="lien" to={'../blog/?cat=blog'}>
           <h6>Blog</h6>
           </Link>
           <span>

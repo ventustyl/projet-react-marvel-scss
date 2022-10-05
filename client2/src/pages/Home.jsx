@@ -1,21 +1,27 @@
-import React from "react";
+import React , { useState } from "react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Fond from "../img/fond.jpg";
 
 const Home = () => {
+
+  const [isActive, setActive] = useState("false");
+  const handleToggle = () => {
+    setActive(!isActive);  };
+
   return (
     <>
       <Navbar />
       <img className="fond-ecran" src={Fond} alt="fond ecran" />
-      <h1>MARVEL VOUS EN MET PLEIN LA VUE</h1>
       <div className="ordre">
         <h3>Date de sortie</h3>
         <input type="checkbox" id="toggle" className="checkbox" />
-        <label htmlFor="toggle" className="label"></label>
+        <label  onClick={handleToggle} htmlFor="toggle" className="label"></label>
         <h3>Ordre histoire</h3>
       </div>
-      <div className="liste"> 
+      <h1>MARVEL VOUS EN MET PLEIN LA VUE</h1>
+  
+      <div className={isActive ? "liste": "liste2"}> 
  {`L'Incroyable Hulk (2008 - film)
 Iron Man (2008 - film)
 Iron Man 2 (2010 - film)
@@ -74,8 +80,8 @@ Miss Marvel (2022 - série)
 She Hulk (2022 - série)
             `}
         </div>
-        <div className="liste2">{`
-            Captain America : The First Avenger (2011 - film)
+        <div className={isActive ? "liste2": "liste"}>
+        {`              Captain America : The First Avenger (2011 - film)
             Marvel's Agent Carter Saison 1 (2015 - série)
             Marvel's Agent Carter Saison 2 (2016 - série)
             Captain Marvel (2019 - film)
