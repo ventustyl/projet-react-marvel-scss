@@ -1,19 +1,20 @@
 //Import de react router dom pour les routes
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Outlet,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Write from "./pages/Write";
 import Film from "./pages/Film";
+import Serie from "./pages/Serie";
+import Personnage from "./pages/Personnage";
 import Home from "./pages/Home";
 import Single from "./pages/Single";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import"./style.scss";
+import Blog from "./pages/Blog";
+import SingleBlog from "./pages/SingleBlog";
+import "./style.scss";
 import Contact from "./pages/Contact";
+
 
 //Creation de la structure des pages dans un layout avec outlet de react router dom
 const Layout = () => {
@@ -30,7 +31,7 @@ const Layout = () => {
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home/>,
+    element: <Home />,
   },
   {
     path: "/",
@@ -41,12 +42,29 @@ const router = createBrowserRouter([
         element: <Film />,
       },
       {
+        path: "/serie",
+        element: <Serie />,
+      },
+      {
+        path: "/personnage",
+        element: <Personnage />,
+      },
+
+      {
         path: "/film/:id",
         element: <Single />,
       },
       {
         path: "/write",
         element: <Write />,
+      },
+      {
+        path: "/blog/:id",
+        element: <SingleBlog />,
+      },
+      {
+        path: "/blog",
+        element: <Blog />,
       },
     ],
   },

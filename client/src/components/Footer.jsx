@@ -16,16 +16,16 @@ const Footer = () => {
       <Link className="lien" to={"../"}>
         <h6>Accueil</h6>
       </Link>
-      <Link className="lien" to={"./?cat=film"}>
+      <Link className="lien" to={'../film/?cat=film'}>
         <h6>Films</h6>
       </Link>
-      <Link className="lien" to={"./?cat=serie"}>
+      <Link className="lien" to={'../serie/?cat=serie'}>
         <h6>Series</h6>
       </Link>
-      <Link className="lien" to={"./?cat=personnage"}>
+      <Link className="lien" to={'../personnage/?cat=personnage'}>
         <h6>Personnages</h6>
       </Link>
-      <Link className="lien" to={"./?cat=blog"}>
+      <Link className="lien" to={'../blog/?cat=blog'}>
         <h6>Blog</h6>
       </Link>
       <span>

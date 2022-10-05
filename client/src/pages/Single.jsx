@@ -45,10 +45,15 @@ const handleDelete = async () => {
   }
 }
 
+const getText = (html) => {
+  const doc = new DOMParser().parseFromString(html, "text/html")
+  return doc.body.textContent
+}
+
   return (
     <div className='single'>
       <div className='content'>
-        <img src={post?.img} alt='A venir'></img>
+        <img src={`../upload/${post.img}`} alt='A venir'></img>
         <div className='user'>
          {post?.userImg ?
          <img src={post.userImg} alt={post.pseudo}></img> 
@@ -68,9 +73,7 @@ const handleDelete = async () => {
            }
             </div>
         <h1>{post.titre}</h1>
-        <p>{
-          post.description
-        }</p>
+        <p>{getText(post.description)}</p>
       </div>
       <Menu cat={post.cat}/>
     </div>

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 03 oct. 2022 à 07:25
--- Version du serveur : 10.4.24-MariaDB
--- Version de PHP : 8.1.6
+-- Généré le : mer. 05 oct. 2022 à 16:50
+-- Version du serveur : 10.4.25-MariaDB
+-- Version de PHP : 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -44,9 +44,36 @@ CREATE TABLE `articles` (
 --
 
 INSERT INTO `articles` (`id`, `titre`, `annee`, `description`, `img`, `creation`, `uid`, `cat`, `id_1`) VALUES
-(1, 'Lorem ipsum dolor sit amet.', 2020, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id dui massa. Morbi gravida arcu vitae lacus pharetra hendrerit. In suscipit magna consequat dolor posuere, nec varius leo sollicitudin.', 'https://geeko-media.lesoir.be/wp-content/uploads/2019/05/avengers-4-endgame-teaser-super-bowl-vostfr-1068x580.jpg', '2022-10-01', 17, 'film', 17),
-(2, 'Lorem ipsum', 2016, 'Marvin on est bon la....\r\nJe me kiffe de ouf ;)', 'https://static.hitek.fr/img/up_m/1876100889/mcularge.jpg', '2022-10-01', 17, 'film', 17),
-(3, 'Avengers Engames', 2019, 'Le Titan Thanos, ayant réussi à s\'approprier les six Pierres d\'Infinité et à les réunir sur le Gantelet doré, a pu réaliser son objectif de pulvériser la moitié de la population de l\'Univers. Cinq ans plus tard, Scott Lang, alias Ant-Man, parvient à s\'échapper de la dimension subatomique où il était coincé. Il propose aux Avengers une solution pour faire revenir à la vie tous les êtres disparus, dont leurs alliés et coéquipiers : récupérer les Pierres d\'Infinité dans le passé.', 'https://www.cine-feuilles.ch/storage/app/uploads/public/5cc/aca/29c/5ccaca29c9d94137251484.jpg', '2022-10-02', 18, 'film', 18);
+(1, 'Lorem ipsum dolor sit amet.', 2020, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id dui massa. Morbi gravida arcu vitae lacus pharetra hendrerit. In suscipit magna consequat dolor posuere, nec varius leo sollicitudin.', '1664874879364multiverse.jpg', '2022-10-01', 17, 'film', 17),
+(4, 'Spiderman', 2021, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fringilla consectetur fermentum. Pellentesque malesuada felis et lorem malesuada, ac vulputate sapien laoreet. Suspendisse blandit, est ac aliquet bibendum, nisl dolor ullamcorper lacus, vel molestie neque ipsum sed velit. Pellentesque risus quam, imperdiet quis felis et, hendrerit ullamcorper tortor. Duis eu quam vel dui feugiat consequat vel eget nisi. Donec at mattis orci. Donec tincidunt faucibus tempus.\r\n\r\nAliquam nec ex a magna rhoncus tempus. Sed in nisl convallis, rutrum elit vel, pellentesque urna. Aenean pulvinar porta tincidunt. Maecenas massa nisl, varius pharetra imperdiet in, facilisis non enim. Etiam lacinia neque felis, porta tincidunt neque porttitor eget. Cras tellus leo, semper id enim tempor, viverra semper est. Suspendisse sit amet velit facilisis, ullamcorper ipsum quis, vulputate nisi. Quisque aliquet pharetra tortor in ullamcorper. Donec risus ipsum, porttitor eget dapibus at, venenatis ac nibh. Maecenas mattis ultricies nulla vitae elementum. Donec euismod erat dolor, eget euismod magna iaculis quis. Integer lacinia leo porta velit luctus luctus. Donec dapibus lorem eu venenatis molestie.\r\n\r\nNullam dui metus, tempor a arcu a, porta gravida tortor. Proin ultrices, lectus vitae tempor egestas, nunc risus sagittis odio, eget ullamcorper leo augue ut purus. Quisque ut efficitur ligula. Nullam elementum suscipit mauris at tincidunt. Phasellus volutpat elementum ligula, eget blandit nunc dignissim sit amet. Aliquam at tempor metus, ac vehicula ex. Aenean sit amet risus ex. Vivamus a ipsum luctus leo pellentesque dapibus in eget magna. Suspendisse ac ullamcorper lacus. Duis tempor eros in lobortis tincidunt.\r\n\r\nNulla lectus ex, aliquet quis dictum quis, volutpat non purus. Aliquam sagittis est non ligula vehicula posuere. Praesent condimentum egestas ligula, convallis auctor ante rhoncus nec. Integer consectetur orci vitae leo sagittis pretium. Nulla auctor, leo non dapibus tincidunt,', '1664874879364multiverse.jpg', '2022-08-01', 20, 'film', 20),
+(9, 'React sur mon site', 2022, '<p>Ceci est <strong>mon article</strong></p><p>test</p><p>test</p>', '1664883533899black-widow.png', '2022-10-04', 18, 'film', 18),
+(16, 'test', 0, '<p>test</p>', '1664957222071blog2.jpg', '2022-10-05', 18, 'blog', 18),
+(17, 'gfhfth', 0, '<p>ghgfch</p>', '1664957304270blog.jpg', '2022-10-05', 18, 'blog', 18),
+(18, 'test', 0, '<p>test</p>', '1664957509227blog2.jpg', '2022-10-05', 18, 'film', 18),
+(19, 'dfgdfg', 0, '<p>dfgfdg</p>', '1664979106915blog2.jpg', '2022-10-05', 18, 'serie', 18),
+(20, 'dfgfdg', 27564, '<p>ngfhfghx</p>', '1664979135855hulk.png', '2022-10-05', 18, 'serie', 18);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `commentaire`
+--
+
+CREATE TABLE `commentaire` (
+  `id` int(11) NOT NULL,
+  `titre` varchar(255) DEFAULT NULL,
+  `textecom` varchar(2000) DEFAULT NULL,
+  `id_1` int(11) NOT NULL,
+  `id_2` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `commentaire`
+--
+
+INSERT INTO `commentaire` (`id`, `titre`, `textecom`, `id_1`, `id_2`) VALUES
+(3, 'hjhgjghj', 'hjygjgjhgj', 18, 18),
+(4, 'khjkhjk', 'kjhkjhvk', 18, 18);
 
 -- --------------------------------------------------------
 
@@ -71,8 +98,11 @@ INSERT INTO `utilisateurs` (`id`, `pseudo`, `email`, `password`, `img`) VALUES
 (14, 'test2', 'test2@gmail.com', '$2a$10$s05xrAZPvhW53KbsfP701uSOmODiy8o9ygqjXd6BEAGwckalDjotG', NULL),
 (15, 'hnjj', '', '$2a$10$s/KLypt2/3TYYDrFQ/qhLONFz3f/6tEYbEEWMLGPHzcBMWCPBx3Ji', NULL),
 (16, 'test3', 'test3@gmail.com', '$2a$10$HmCraeWtnqkYz4PG2EZ0tesRDUqILkk4tYrPv8R2YUF9.CdMeoo0K', NULL),
-(17, 'marvin', 'marvin@gmail.com', '$2a$10$48T0qjPVrPVJtrTk39ONre/wOT8smhaOG.Sgk5GkdDAveTp5rpLkm', NULL),
-(18, 'eric', 'eric.venturino@orange.fr', '$2a$10$wtcbTy4jj4sQ72BwHUK8y.pyq8PgMzlrMpesdvHgdMAAPBow30UeS', NULL);
+(17, 'marvin', 'marvin@gmail.com', '$2a$10$48T0qjPVrPVJtrTk39ONre/wOT8smhaOG.Sgk5GkdDAveTp5rpLkm', ''),
+(18, 'eric', 'eric.venturino@orange.fr', '$2a$10$wtcbTy4jj4sQ72BwHUK8y.pyq8PgMzlrMpesdvHgdMAAPBow30UeS', 'https://mir-s3-cdn-cf.behance.net/projects/404/ec690764716283.Y3JvcCwxNDAzLDEwOTgsMCwxODM.jpg'),
+(19, 't', 't', '$2a$10$T1HOyjYwzEgVwPtAwqPz3eYbH18fPGOjYIZco.mWN5L5QAlgHKtVK', NULL),
+(20, 'gwen', 'gwen', '$2a$10$CJU6RS1aHpEnYa112d4zDep6RT5dqajktYf8AowP0NNqTxMPkhpr6', NULL),
+(21, 'roland', 'roland@gmail.com', '$2a$10$qqUNR/icUdlcuNNG2kZxcOsnOz/.Rusk4IMA4BX7B1/E1YKm7N2pu', NULL);
 
 --
 -- Index pour les tables déchargées
@@ -84,6 +114,14 @@ INSERT INTO `utilisateurs` (`id`, `pseudo`, `email`, `password`, `img`) VALUES
 ALTER TABLE `articles`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_1` (`id_1`);
+
+--
+-- Index pour la table `commentaire`
+--
+ALTER TABLE `commentaire`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_1` (`id_1`),
+  ADD KEY `id_2` (`id_2`);
 
 --
 -- Index pour la table `utilisateurs`
@@ -99,13 +137,19 @@ ALTER TABLE `utilisateurs`
 -- AUTO_INCREMENT pour la table `articles`
 --
 ALTER TABLE `articles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- AUTO_INCREMENT pour la table `commentaire`
+--
+ALTER TABLE `commentaire`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- Contraintes pour les tables déchargées
@@ -116,6 +160,13 @@ ALTER TABLE `utilisateurs`
 --
 ALTER TABLE `articles`
   ADD CONSTRAINT `articles_ibfk_1` FOREIGN KEY (`id_1`) REFERENCES `utilisateurs` (`id`);
+
+--
+-- Contraintes pour la table `commentaire`
+--
+ALTER TABLE `commentaire`
+  ADD CONSTRAINT `commentaire_ibfk_1` FOREIGN KEY (`id_1`) REFERENCES `utilisateurs` (`id`),
+  ADD CONSTRAINT `commentaire_ibfk_2` FOREIGN KEY (`id_2`) REFERENCES `articles` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
