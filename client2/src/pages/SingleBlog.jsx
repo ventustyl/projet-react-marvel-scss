@@ -14,12 +14,12 @@ const SingleBlog = () => {
 
 
   const [post, setPost] = useState({});
-
   const location = useLocation();
   const Navigate = useNavigate();
   const postId = location.pathname.split("/")[2];
-
   const { currentUser } = useContext(AuthContext);
+
+
 
 
   // Affichage de l'article
@@ -60,6 +60,10 @@ const SingleBlog = () => {
     }
   };
 
+const [element, setElement] = useState ([
+  {  base: postId}
+])
+console.log(element, setElement)
 
 
   return (
@@ -78,7 +82,9 @@ const SingleBlog = () => {
             )}
             <div className="info">
               <span>{post.pseudo}</span>
+              <p>article<span> {post.id}</span></p>
               <p>Posté il y a {moment(post.creation).fromNow()}</p>
+          
             </div>
 
             {currentUser?.pseudo === post.pseudo ? (
@@ -97,7 +103,7 @@ const SingleBlog = () => {
         </div>
    
       </div>
-      <Comments/>
+      <Comments element={postId}/>
       <Affichage />
           </>
   );

@@ -5,9 +5,7 @@ import jwt from "jsonwebtoken";
 
 
 export const getBlogs = (req, res) => {
-  const q = req.query.cat
-    ? "SELECT * FROM commentaire WHERE id=?"
-    : "SELECT * FROM commentaire";
+  const q = "SELECT `titrecom`, `textecom` FROM `commentaire` JOIN articles JOIN utilisateurs WHERE id_2= ?";
 
   bdd.query(q, [req.query.cat], (err, data) => {
     if (err) return res.status(500).send(err);
@@ -39,15 +37,15 @@ export const addBlog = (req, res) => {
   jwt.verify(token, "jwtkey", (err, userInfo) => {
     if (err) return res.status(403).json("Token is not valid!");
 
-    const q = "INSERT INTO `commentaire` (`titre`, `textecom`, `id_1`, `id_2`)  VALUES (?)";
+    const q = "INSERT INTO `commentaire` (`titrecom`, `textecom`, `id_1`, `id_2`)  VALUES (?)";
 
     const values = [
       req.body.titre,  
       req.body.textecom,
       userInfo.id,
-      userInfo.id,
+      req.body.test
     ]
-    console.log(userInfo);
+    console.log(values);
     console.log(q);
 
     bdd.query(q, [values], (err, data) => {
