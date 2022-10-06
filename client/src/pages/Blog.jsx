@@ -41,7 +41,7 @@ const Blog = () => {
                 />
               </div>
               <div className="content">
-                <Link to={`/blog/${post.id}`}>
+                <Link to={`/blog/cat=${post.id}`}>
                   <h1>{post.titre}</h1>
                   <p>Année : {post.annee}</p>
                   <p>{getText(post.description).slice(0, 150) + "..."}</p>

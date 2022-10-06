@@ -1,11 +1,33 @@
 import React from 'react'
 import { useEffect } from "react";
 import { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
+import Suppr from '../img/corbeille.png'
 
 
-const Affichage = () => {    
+const Affichage = (props) => {  
+  const location = useLocation(); 
+  console.log(props.item);
+  const Navigate = useNavigate();
+console.log(location);
+const postArticle = location.pathname.split("/")[2];
+
+
+
+
+
+
+  const handleDelete = async () => {
+    try {          
+     await axios.delete(`/postblog/${postArticle}`);
+     Navigate(`/blog/${props.element}`)
+      
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   const [blog, setBlog] = useState([]);
   const cat = useLocation().search;
   console.log(cat)
@@ -30,8 +52,14 @@ const Affichage = () => {
           {blog.map((postblog) => (
             <div className="blog" key={postblog.id}>
               <div className="blog-content">
-                  <h4>{postblog.titre}</h4>
+              <p>{postblog.id}</p>
+                  <h4>{postblog.titrecom}</h4>
                   <p>{postblog.textecom}</p>
+                  <div className="edit">
+        
+            <img onClick={handleDelete} src={Suppr} alt="supprimer" />
+          
+            </div>
               </div>
             </div>
           ))}

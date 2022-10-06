@@ -35,7 +35,6 @@ const Menu = ({ cat }) => {
             <img src={`../upload/${post.img}`} alt="" />        
           <h2>{post.titre}</h2>
           <p>{getText(post.description).slice(0, 40) + "..."}</p>
-
           <button>En lire +</button>
           </div>
           </Link>

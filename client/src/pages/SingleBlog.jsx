@@ -27,7 +27,7 @@ const SingleBlog = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`/post/${postId}`);
+        const res = await axios.get(`/post/?cat=${postId}`);
         setPost(res.data);
       } catch (err) {
         console.log(err);
@@ -104,7 +104,7 @@ console.log(element, setElement)
    
       </div>
       <Comments element={postId}/>
-      <Affichage />
+
           </>
   );
 };

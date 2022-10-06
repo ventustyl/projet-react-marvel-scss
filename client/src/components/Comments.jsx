@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
-
+import Affichage from "./Affichage";
 
 
 
@@ -12,11 +12,12 @@ const Comments = (props) => {
   const [textecom, setTextecom] = useState(state?.textecom || "");
   const [test, setTest] = useState(state?.itest || "");
 
+  const [item, setItem] = useState ([
+    {  base: props.element}
+  ])
+  console.log(item, setItem)
 
-
-console.log(props.element)
-
-
+console.log(props.item)
   const Click = async (e) => {
 
     e.preventDefault();
@@ -36,14 +37,14 @@ console.log(props.element)
     } catch (err) {
       console.log(err);
     }
-    navigate(`/blog/${props.element}`)
+    navigate(`/blog/${props.element.slice(5,7)}`)
 
   };
 
   return (
     <>
       <div className="bloc-commentaire">
-        <h4 >Laisser un commentaire sur l'article <div name="test" value={test}>{props.element}</div> </h4>
+        <h4 >Laisser un commentaire sur l'article <div name="test" value={test}>{props.element.slice(5,7)}</div> </h4>
         <label>Titre</label>
         <input
           value={titre}
@@ -67,6 +68,7 @@ console.log(props.element)
           Envoyer
         </button>
       </div>
+      <Affichage />
     </>
   );
 };
